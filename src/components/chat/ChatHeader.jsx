@@ -1,20 +1,15 @@
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 import { useAuthStore } from "../../store/useAuthStore";
 import { useChatStore } from "../../store/useChatStore";
-import { useUi } from "../../context/UiContext";
 
 const ChatHeader = () => {
   const { selectedUser, setSelectedUser } = useChatStore();
   const { onlineUsers } = useAuthStore();
-  const { openSidebar } = useUi();
 
   return (
     <div className="p-2.5 border-b border-base-300">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <button className="md:hidden" onClick={openSidebar}>
-            <Menu />
-          </button>
           {/* Avatar */}
           <div className="avatar">
             <div className="size-10 rounded-full relative">
